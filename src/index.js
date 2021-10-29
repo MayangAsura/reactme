@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'; 
+import ReactDOM from 'react-dom'; // fuction utk render ke browser
+import './index.css'; // utk styling
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
