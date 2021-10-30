@@ -1,35 +1,34 @@
-import React from 'react';
+import React from "react";
 import './App.css';
-import Selamat from './Selamat';
 
+class App extends React.Component {
+    constructor(props){
+        super(props)
+        this.state={nama: 'Budi', umur: 20}
+    }
 
+    _ubahNama = () => this.setState({nama: 'Mayang', umur: '10'})
 
-function App() {
-  return (
-
-    <>
-
-      <Selamat></Selamat>
-      <div className="Header"> Bismillah apa kabar?</div>
-      <div className="Isi"> Bismillah apa kabar?</div>
-    </>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-  );
+    render() {
+        return (
+            <div className="App">
+                <div className="Header">
+                    State dan Props di Component React.js
+                </div>
+                <div>
+                    Nama : {this.state.nama}
+                </div>
+                <div>
+                    Umur : {this.state.umur}
+                </div>
+                <input 
+                    type="button" 
+                    onClick={this._ubahNama} 
+                    value="Klik untuk mengubah nama dan umur"
+                />
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
