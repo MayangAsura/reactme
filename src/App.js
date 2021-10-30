@@ -6,8 +6,11 @@ class App extends React.Component {
         super(props)
         this.state={nama: 'Budi', umur: 20}
     }
-
-    _ubahNama = () => this.setState({nama: 'Mayang', umur: '10'})
+    //added from master
+    //added from state
+    _ubah = () => this.setState({nama: 'Mayang', umur: '10'})
+    _ubahNama2 = (namabaru) => this.setState({nama : namabaru})
+    _ubahUmur2 = (umurbaru) => this.setState({umur : parseInt(umurbaru)})
 
     render() {
         return (
@@ -23,9 +26,18 @@ class App extends React.Component {
                 </div>
                 <input 
                     type="button" 
-                    onClick={this._ubahNama} 
+                    onClick={this._ubah} 
                     value="Klik untuk mengubah nama dan umur"
+                /><br/>
+                <input
+                    type="type"
+                    onBlur={(event) => this._ubahNama2(event.target.value)}
+                /><br/>
+                <input
+                    type="text"
+                    onBlur={(event) => this._ubahUmur2(event.target.value)}
                 />
+
             </div>
         )
     }
